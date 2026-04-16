@@ -21,7 +21,7 @@ SECTOR_TICKER = "IYK"  # Consumer Staples -- kept for decomposition chart only
 LOOKBACK_DAYS = 365
 CIK = "0000088121"
 HDS_FILE = Path(__file__).parent / "SEB - HDS Current Q4-25.xlsx"
-OUTPUT_FILE = Path(__file__).parent / "dashboard.html"
+OUTPUT_FILE = Path(__file__).parent / "index.html"
 
 
 # =============================================================================
@@ -590,7 +590,7 @@ a:hover{{text-decoration:underline;}}
 .note-box strong{{color:var(--amber);}}
 
 /* PDF button */
-.pdf-btn{{position:fixed;bottom:24px;right:24px;background:var(--accent);color:#fff;border:none;padding:12px 24px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;z-index:100;box-shadow:0 4px 12px rgba(0,0,0,0.4);display:flex;align-items:center;gap:8px;}}
+.pdf-btn{{background:var(--accent);color:#fff;border:none;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;}}
 .pdf-btn:hover{{background:#2563eb;}}
 .pdf-btn svg{{width:16px;height:16px;fill:currentColor;}}
 
@@ -662,13 +662,12 @@ a:hover{{text-decoration:underline;}}
   <div style="display:flex;align-items:center;gap:16px;">
     <span class="source-badge"><span class="dot"></span>Yahoo Finance + SEC EDGAR</span>
     <span class="header-meta">Seaboard Corporation &middot; {stats['days']} trading days &middot; Updated {latest['date']}</span>
+    <button class="pdf-btn" onclick="downloadPDF()">
+      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6zm3-7h6v1.5H9V13zm0 3h6v1.5H9V16zm0-6h3v1.5H9V10z"/></svg>
+      Download PDF
+    </button>
   </div>
 </div>
-
-<button class="pdf-btn" onclick="downloadPDF()">
-  <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM6 20V4h5v7h7v9H6zm3-7h6v1.5H9V13zm0 3h6v1.5H9V16zm0-6h3v1.5H9V10z"/></svg>
-  Download PDF
-</button>
 
 <div class="container">
 
